@@ -1,0 +1,117 @@
+button {
+  padding: 9px 25px;
+  color: #fff;
+  background-color:  #7d2ae8;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  padding: 10px 0px 10px 10px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+}
+
+input:focus {
+  outline: none;
+}
+
+header{
+   width: 100%;
+   height: 9vh;
+   padding: 0px 15px;
+   background-color: #7d2ae8;
+   color: #fff;
+   display: flex;
+   align-items: center;
+}
+
+header ul {
+   display: flex;
+   align-items: center;
+}
+header ul li {
+ list-style: none;
+}
+
+header ul li a{
+   text-decoration: none;
+   color: #fff;
+   margin-right: 30px;
+}
+
+section{
+   height: 91vh;
+}
+
+.addSection , .loginSection, .signupSection{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.addSection .addDiv, .loginSection .loginDiv, .signupSection .signupDiv{
+   padding: 50px 70px;
+   box-shadow: 0 3px 10px rgb(0 0 0 / 30%);
+   border-radius: 3px;
+}
+
+.addDiv form, .loginDiv form, .signupDiv form{
+   display: flex;
+   flex-direction: column;
+   width: 300px;
+}
+
+.addDiv form input, .addDiv form button, .loginDiv form input ,button, .signupDiv form input, button{
+   margin-top: 15px;
+}
+
+.filterDiv {
+   display: flex;
+   flex-direction: column;
+   width: 450px;
+}
+
+.dashboard{
+   width: 100%;
+}
+
+.productDiv{
+   display: flex;
+   padding: 30px 0px 0px 30px;
+}
+
+.card{
+   position: relative;
+   width: 25%;
+   float: left;
+   overflow: hidden;
+   /* width: 33%;
+   display: flex;
+   flex-direction: column; */
+   box-shadow: 0 3px 10px rgb(0 0 0 / 30%);
+   padding: 15px 30px;
+   margin: 0px 30px 30px 0px
+}
+
+.row{
+   display: inline-block;
+    width: 100%;
+    padding: 0px 30px;
+   /* width: 100%;
+   display: flex; */
+}
+
+.searchDiv{
+   margin-bottom: 30px;
+}
+
+.mr-2{
+   margin-right: 10px;
+}
+
+.card-text{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}

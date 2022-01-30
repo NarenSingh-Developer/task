@@ -2,19 +2,37 @@ const Product = require("../models/Product");
 
 module.exports = {
   async getProduct(req, res) {
+    const page = req.params.page;
+    const PAGE_SIZE = 9;
+    const skip = (page - 1) * PAGE_SIZE;
     try {
-      const getallProducts = await Product.find();
+      const getallProducts = await Product.find().skip(skip).limit(PAGE_SIZE);
+      console.log("getallProducts: ", getallProducts);
       res.status(200).json({ getallProducts });
     } catch (e) {
       console.log(e);
     }
   },
 
-  async getProductById(req, res) {
-    const id = req.params.id;
+  async getfilterProduct(req, res) {
+    const { search, brand, price } = req.body;
+    let args = {};
+
     try {
-      const getProductById = await Product.findById(id);
-      res.status(200).json({ getProductById });
+      if (search) {
+        args = { name: search };
+      }
+      if (brand) {
+        args = { ...args, brand: brand };
+      }
+      if (price) {
+        args = { ...args, price: { $lte: price } };
+      }
+
+      console.log("args: ", args);
+      const getfilterProduct = await Product.find(args);
+      console.log("getfilterProduct: ", getfilterProduct);
+      res.status(200).json({ getfilterProduct });
     } catch (e) {
       console.log(e);
     }

@@ -42,7 +42,8 @@ const SignUp = () => {
   };
   return (
     <>
-      <section>
+      <section className="signupSection">
+      <div className="signupDiv">
         <h1>SignUp</h1>
         <form method="POST" onSubmit={(e) => Submit(e)}>
           <input
@@ -69,9 +70,10 @@ const SignUp = () => {
             value={newuser.password}
             autoComplete="off"
           />
-                <Link to="/login">already have account</Link>
+                <Link to="/login" style={{marginTop: "15px", textAlign: "center"}}>Already have account</Link>
           <button type="submit">Submit</button>
         </form>
+</div>
       </section>
     </>
   );
